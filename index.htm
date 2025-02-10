@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narayan Kumar - Portfolio</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; color: #000;
+            background-color: #f4f4f4;
             color: #000;
             scroll-behavior: smooth;
+            padding-top: 80px; /* Offset for fixed header */
         }
+
+        /* Header & Navigation */
         header {
             background: rgba(0, 0, 0, 0.8);
-            color: #007bff;
-            padding: 20px;
+            color: #fff;
+            padding: 15px 20px;
             text-align: left;
             position: fixed;
             width: 100%;
@@ -28,23 +32,44 @@
             padding: 0;
             list-style: none;
             text-align: center;
+            margin: 0;
         }
         nav ul li {
             display: inline;
-            margin: 0 20px;
+            margin: 0 15px;
         }
         nav ul li a {
-            color: #007bff;
+            color: #fff;
             text-decoration: none;
             font-size: 18px;
         }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
         .hero {
+            position: relative;
             height: 100vh;
             background: url('background.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            color: #fff;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+        }
+        .hero div {
+            position: relative;
+            z-index: 1;
         }
         .hero h1 {
             font-size: 50px;
@@ -53,10 +78,17 @@
         .hero p {
             font-size: 20px;
         }
+
+        /* Sections */
         section {
             padding: 50px;
             text-align: center;
         }
+        section h2 {
+            color: #007bff;
+        }
+
+        /* Research Section */
         .gallery {
             display: flex;
             overflow-x: auto;
@@ -67,118 +99,113 @@
             width: 300px;
             border-radius: 8px;
             transition: transform 0.3s;
+            loading: lazy;
         }
         .gallery img:hover {
             transform: scale(1.1);
         }
+
         video {
             width: 80%;
             border-radius: 8px;
+            max-width: 800px;
         }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
             background-color: #000;
             color: #fff;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .gallery {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header & Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#narayan">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#posts">Posts</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div>
             <h1>Narayan Kumar</h1>
-            <p>Ph.D Student & Research Assistant | University of Delaware | Coastal Engineering | Sediment Transport, Swash Zone Turbulence Modeling, Wave Breaking | SDG 13, 15, 11</p>
+            <p>Ph.D Student & Research Assistant | University of Delaware | Coastal Engineering | Sediment Transport, Swash Zone Turbulence Modeling, Wave Breaking</p>
         </div>
     </section>
-    <section id="narayan">
+
+    <!-- About Section -->
+    <section id="about">
         <h2>About Me</h2>
         <p>Ph.D. Student in Coastal Engineering at the University of Delaware, specializing in numerical modeling of sediment transport.</p>
         <p><a href="Narayan_Kumar_CV.pdf" download target="_blank">Download CV</a></p>
     </section>
+
+    <!-- Research Section -->
     <section id="research">
-        <h2>Honors/Fellowships /Scholarships & Awards</h2>
-        <ul>
-            <li>Selected as TOS Student Representative for the 2026 Ocean Sciences Meeting by The Oceanography Society (TOS), in Dec’24</li>
-            <li>Recipient of American Geophysical Union (AGU) Fall Meeting Student Travel Grant, $1000 by AGU, in Dec’24</li>
-            <li>Recipient of 2024 USCRP Decadal Visioning Workshop Travel Grant, $1200 by USCRP, in June’24</li>
-            <li>Recipient of The Hydrographic Society of America (THSOA) National Tuition Scholarship, $1000 by THSOA, in June’24</li>
-            <li>Recipient of Students and New Professionals Travel Scholarship, $100 to attend the 2024 ASBPA Coastal Summit, March’24 in Washington D.C., USA.</li>
-            <li>Recipient of Field Inclusive Research Grant (Climate focused), $500 by Field Inclusive, Inc., in Mar’24</li>
-            <li>Selected in the Spring 2024 VentureOn Program reimbursable fund $250 by Venture Development Centre, University of Delaware, in Mar’24</li>
-            <li>Selected as Community Science Fellow - Thriving Earth Exchange by the American Geophysical Union, in Feb’24</li>
-            <li>Recipient of The Hydrographic Society of America (THSOA) National Tuition Scholarship, $1000 by THSOA, in Dec’23</li>
-            <li>Recipient of Ratcliff Eco Entrepreneurship Fellowship (REEF), $200 as runner-up Team in Eco Entrepreneurship Design Sprint 2023, Oct’23 at the University of Delaware, USA.</li>
-            <li>Awarded the Nicholas Kraus Coastal Scholar Award, $600 in 2023 ASBPA National Coastal Conference, Oct’23 in Providence, Rhode Island, USA.</li>
-            <li>Recipient of Students and New Professionals Travel Scholarship, $200 to attend the 2023 ASBPA National Coastal Conference, Oct’23 in Providence, Rhode Island, USA.</li>
-            <li>Awarded Graduate Student Travel Award, $1000 to attend the 9th annual YCSEC-A, Aug’23 in Madison, Wisconsin, USA.</li>
-            <li>Selected as recipient of the WEDA Travel Scholarship, $1200 for the Dredging Summit & Expo Jul’23, USA.</li>
-            <li>Selected as WEDA Fellow 2023 with a fellowship of $12,500 by the Western Dredging Association in Feb’23.</li>
-            <li>Recipient of Unlock Education Program Scholarship of $1334 (INR 100000) by SANMAT Foundation, in Aug’21</li>
-            <li>Awarded the Centrale Nantes Elite Scholarship for the outstanding international student in Sep’21.</li>
-            <li>Annual Management Recognition from Subros Limited for in-house production Capability Development Plastic Line Set up in 2019.</li>
-            <li>Awarded Research Grants from the Institution of Engineers (India), $750 (INR 50000) - “Study and investigation of the effect of Greenhouse in drying perforated bricks” and “Study and experimental investigation of utilization of bamboo wastage” in 2015.</li>
-            <li>Awarded a merit certificate of 0.01% student from CBSE for scoring perfect 100/100 in Social Science and 99/100 in Science among 1.1M students in 2008.</li>
-            <li>First engineering graduate of the economically backward community of Village Panchayat.</li>
-            <li>Secured 1st Place in the Institute-level Technical Quiz competition “Concepto-Mechanics” at NIT Agartala.</li>
-            <li>Awarded 3rd Position in Institute-level Essay Writing competition at NIT Agartala.</li>
-            <li>Selected for the Regional East and North East India level IET India Scholarship 2015.</li>
-            <li>Selected for the regional-level science congress in Jawahar Navodaya Vidyalaya, Hazaribagh (Jharkhand), among 25 students.</li>
-            <li>Selected for the cluster-level Poem Recitation competition in Jawahar Navodaya Vidyalaya, Latehar (Jharkhand).</li>
-            <li>Six Sigma Yellow and White Belt Certified.</li>
-        </ul>
+        <h2>Research & Achievements</h2>
+        <p>My research focuses on sediment transport, wave breaking, and computational fluid dynamics.</p>
 
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Sediment Transport Phenomena, Nearshore Wave Breaking, Computational Fluid Dynamics</li>
-            <li>Volume of Fluid (VOF) type Surface wave modeling, Wave-Surface interactions, Swash zone processes</li>
-        </ul>
-
-        <h2>Research Experience</h2>
-        <p>Designed and modeled a Numerical experiment to understand the evolution of solitary wave breaking over a sloping beach.</p>
-        <p>Implemented computational fluid dynamics (CFD) based three-phase solver (sedInterFoam) to evaluate and quantify the sediment transport, morphology, and hydrodynamics.</p>
-        <p>Developed a three-phase numerical model (sedInterFoam) to simulate wave-structure interaction and sediment transport.</p>
         <h3>Research Video</h3>
-        <video controls>
+        <video controls poster="video-thumbnail.jpg">
             <source src="research_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+
         <h3>Research Gallery</h3>
         <div class="gallery">
             <img src="research1.jpg" alt="Research Image 1">
             <img src="research2.jpg" alt="Research Image 2">
             <img src="research3.jpg" alt="Research Image 3">
         </div>
-        <h3>Conference Abstract and Presentations</h3>
-        <ul>
-            <li>Narayan Kumar, Mathieu, Antoine, Tsai, Benjamin, Hsu, Tianjian, Puleo, Jack, and Chauchat, Julien: Cross-shore Beach Profile Evolution Driven by Successive Wave Breaking in Swash Zone. American Geophysical Union (AGU) Fall Meeting, December 2024.</li>
-            <li>Narayan Kumar, Mathieu, Antoine, Tsai, Benjamin, Hsu, Tianjian, Puleo, Jack, and Chauchat, Julien: SedInterFoam: a multi-phase numerical model for sediment transport and its application to swash zones. 38th International Conference on Coastal Engineering (ICCE), September 2024.</li>
-        </ul>
     </section>
+
+    <!-- Posts Section -->
     <section id="posts">
         <h2>Posts</h2>
         <p>Coming soon: Updates on my latest research and publications.</p>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:narayank@udel.edu">narayank@udel.edu</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/narayan-kumar-udel/">linkedin.com/in/narayan-kumar-udel</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/narayan-kumar-udel/" target="_blank">linkedin.com/in/narayan-kumar-udel</a></p>
     </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Narayan Kumar. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
+
 
 
 
